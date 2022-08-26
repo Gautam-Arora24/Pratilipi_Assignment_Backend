@@ -15,15 +15,9 @@ const ContentSchema = new Schema({
     type: Date,
     required: true,
   },
-  userId: {
-    type: mongoose.ObjectId,
-    default: null,
-    required: true,
-  },
   likes: {
     type: Number,
     default: 0,
-    required: true,
   },
 });
 
