@@ -16,7 +16,7 @@ module.exports = {
       const users = await UserModel.find({ email });
 
       if(users.length > 0){
-        return res.status(400).json({ error:'User with this emailID already exists' });
+        return res.json({ error:'User with this emailID already exists' });
       }
 
       // Storing the password in hashed form.
@@ -49,9 +49,8 @@ module.exports = {
   filterData: async(req, res)=>{
     try {
       const { parsedCSV } = req.body;
-      console.log(parsedCSV);
 
-      /* Since, we can use async inside the filter method. I have created promises array
+      /* Since, we can't use async inside the filter method. I have created promises array
       and made use of Promise.all() to get the final array that has the response of all
       the promises collectively */
       const promiseArray = parsedCSV.map(item=>{

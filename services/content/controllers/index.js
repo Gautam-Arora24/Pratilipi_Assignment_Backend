@@ -56,7 +56,6 @@ module.exports = {
       const finalData = result.filter(item =>{
         return apiResponse.data.includes(item['user_id']) === true;
       });
-      console.log(finalData);
       await ContentModel.insertMany(finalData);
       return res.json(finalData);
 
