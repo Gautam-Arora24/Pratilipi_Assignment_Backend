@@ -5,19 +5,9 @@ const { USER_SERVICE } = require('../config');
 const axios = require('axios');
 
 module.exports = {
-  getBooksAsContent : async (req, res)=>{
-    try {
-      const data = await ContentModel.find();
-      return res.status(200).json(data);
-    }
-    catch(err){
-      return res.json({ error:'Unable to fetch content' });
-    }
-  },
-
   getTopContent : async(req, res)=>{
     try {
-      const data = await ContentModel.find().sort({ 'likes': 1 });
+      const data = await ContentModel.find().sort({ 'likes': -1 });
       return res.status(200).json(data);
     }
     catch(err){

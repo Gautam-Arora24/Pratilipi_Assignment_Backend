@@ -39,9 +39,14 @@ module.exports = {
       /* Requesting another microservice (Content service) to update the like count
       for a particular content */
       const result = await axios.post(`${CONTENT_SERVICE}/like/${contentId}`);
+      req.io.emit('incrementLikeCount', {
+        contentId,
+        likes: result.data.likes,
+      });
       return res.status(200).json(result.data);
     }
     catch(err){
+      console.log(err);
       return res.json({ error:'Unable to update the like count' });
     }
   },
@@ -60,11 +65,9 @@ module.exports = {
       const result = returnedPromiseArray.filter(item=>{
         return !!item === true;
       });
-      console.log('gausdf', result);
       const filteredArrayContainingOnlyId = result.map(item=>{
         return item._id.toString();
       });
-      // console.log(filteredArrayContainingOnlyId);
       return res.json(filteredArrayContainingOnlyId);
 
     } catch(err) {
