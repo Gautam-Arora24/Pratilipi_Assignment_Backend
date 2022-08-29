@@ -3,7 +3,7 @@
 
   <h1 align="center">Pratilipi Backend</h1>
 
-  <p align="center">Frontend solution to Pratilipi's Assignment</p>
+  <p align="center">Backend solution to Pratilipi's Assignment</p>
 
 ## ✨ Features
 
@@ -61,3 +61,5 @@ Some Important Links regarding the project->
 - [Youtube Video demonstrating the project](https://youtu.be/JPWkoN0QYBE)
 
 - [Architecture Diagram for the Backend](https://whimsical.com/pratilipi-NzVMVafSYYGvQEMfrnASBD)
+
+- [Frontend repository for the assignemnt](https://github.com/Gautam-Arora24/Pratilipi_Assignment_Frontend)
